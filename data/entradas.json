@@ -40,7 +40,7 @@
       ]
     }
   ],
-      "Kyoto": [
+    "Kyoto": [
     {
       "titulo": "27/10",
       "parrafos": [
@@ -55,7 +55,7 @@
       ]
     }
   ],
-      "Kyoto": [
+    "Kyoto": [
     {
       "titulo": "28/10_TRASLADO",
       "parrafos": [
@@ -80,7 +80,7 @@
       ]
     }
   ],
-      "Osaka": [
+    "Osaka": [
     {
       "titulo": "30/10",
       "parrafos": [
@@ -100,7 +100,8 @@
         "En Osaka vimos gente fumando en la calle, gente comiendo caminando y por la noche basura en la vereda (sería el día de sacarla?) también muchas colillas de cigarro y gente vagando, hasta una señora juntando latas y un viejito llevando un carro de super."
       ]
     }
-  ],    "Osaka": [
+  ],
+    "Osaka": [
     {
       "titulo": "1/11",
       "parrafos": [
@@ -113,7 +114,7 @@
       ]
     }
   ],
-        "Osaka": [
+    "Osaka": [
     {
       "titulo": "2/11_TRASLADO",
       "parrafos": [
@@ -123,7 +124,7 @@
       ]
     }
   ],
-        "Nagoya": [
+    "Nagoya": [
     {
       "titulo": "4/11",
       "parrafos": [
@@ -150,7 +151,7 @@
       ]
     }
   ],
-        "Nagoya": [
+    "Nagoya": [
     {
       "titulo": "5/11_TRASLADO",
       "parrafos": [
@@ -178,7 +179,7 @@
       ]
     }
   ],
-        "Tokyo": [
+    "Tokyo": [
     {
       "titulo": "7/11",
       "parrafos": [
@@ -428,3 +429,4 @@
       ]
     }
   ]
+}
