@@ -1,0 +1,37 @@
+{
+  "Kyoto": [
+    {
+      "titulo": "Aterrizaje",
+      "parrafos": [
+        "El primer contacto con la ciudad es silencioso y ordenado.",
+        "Todo parece funcionar sin esfuerzo, como si la ciudad respirara sola."
+      ]
+    },
+    {
+      "titulo": "Templo",
+      "parrafos": [
+        "La madera cruje bajo los pasos.",
+        "El olor a incienso se mezcla con el aire frío.",
+        "El tiempo parece detenerse."
+      ]
+    }
+  ],
+  "Osaka": [
+    {
+      "titulo": "Sumimasen",
+      "parrafos": [
+        "Una palabra breve.",
+        "Funciona como disculpa, como permiso y como puente."
+      ]
+    }
+  ],
+  "Tokyo": [
+    {
+      "titulo": "Shibuya",
+      "parrafos": [
+        "Miles de personas cruzan sin tocarse.",
+        "Un caos perfectamente sincronizado."
+      ]
+    }
+  ]
+}
