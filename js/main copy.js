@@ -6,23 +6,22 @@ console.log("main.js cargao");
 // ==============================
 
 // cantidad de scroll necesaria por entrada (en vh)
-const SCROLL_POR_ENTRADA = 20;
-
-// multiplica la sensibilidad del scroll
-const SENSIBILIDAD_SCROLL = 2.0; // probá 1.2 – 2
-
+const SCROLL_POR_ENTRADA = 20; // probá 40, 50, 70
 
 // ==============================
 // ESTADO GLOBAL
 // ==============================
 
+// índice de la entrada activa
 let entradaActivaIndex = 0;
 
+// referencias a las capas de fondo
 const capasFondo = {
   actual: document.querySelector(".capa1"),
   siguiente: document.querySelector(".capa2")
 };
 
+// controla cuál capa está visible
 let capaActiva = "actual";
 
 
@@ -73,7 +72,9 @@ function renderEntradasInicial() {
 // ==============================
 
 function actualizarEntradaActiva() {
-  document.querySelectorAll(".entrada").forEach((el, index) => {
+  const entradasDOM = document.querySelectorAll(".entrada");
+
+  entradasDOM.forEach((el, index) => {
     el.classList.toggle("activa", index === entradaActivaIndex);
   });
 }
@@ -90,11 +91,14 @@ function actualizarFondo(index) {
   const capaOculta =
     capaActiva === "actual" ? capasFondo.siguiente : capasFondo.actual;
 
+  // asignar imagen a la capa oculta
   capaOculta.style.backgroundImage = `url(${imagenURL})`;
 
+  // cross-fade
   capaOculta.classList.add("activa");
   capaVisible.classList.remove("activa");
 
+  // alternar capas
   capaActiva = capaActiva === "actual" ? "siguiente" : "actual";
 }
 
@@ -114,14 +118,16 @@ function ajustarScrollSpacer() {
 // ==============================
 
 fetch("data/entradas.json")
-  .then(res => res.json())
+  .then(response => response.json())
   .then(data => {
     crearEntradasDesdeJSON(data);
     entradaActivaIndex = 0;
     renderEntradasInicial();
     ajustarScrollSpacer();
   })
-  .catch(err => console.error("Error cargando el JSON:", err));
+  .catch(error => {
+    console.error("Error cargando el JSON:", error);
+  });
 
 
 // ==============================
@@ -130,10 +136,9 @@ fetch("data/entradas.json")
 
 window.addEventListener("scroll", () => {
   const scrollUnit = window.innerHeight * (SCROLL_POR_ENTRADA / 100);
-  const scrollNormalizado = window.scrollY * SENSIBILIDAD_SCROLL;
+  const index = Math.floor(window.scrollY / scrollUnit);
 
-  const index = Math.round(scrollNormalizado / scrollUnit);
-
+  // limitar el índice al rango válido
   const indexSeguro = Math.max(
     0,
     Math.min(index, registroEntradas.length - 1)
@@ -142,6 +147,7 @@ window.addEventListener("scroll", () => {
   if (indexSeguro !== entradaActivaIndex) {
     entradaActivaIndex = indexSeguro;
     actualizarEntradaActiva();
-    actualizarFondo(indexSeguro);
+    actualizarFondo(entradaActivaIndex);
   }
 });
+
