@@ -1,7 +1,6 @@
 PROBLEMAS conocidos
-solo scrollea hasta el 19/11
-faltal los ultimos días
-las imagenes solo llegan hasta el 28/10
+le falt aun poquito apra terminar de screollear hasta la ultima entradda
+las imagenes solo llegan hasta el 29/10
 
 TEXTO MUY LARGO
 8/11 
@@ -10,3 +9,4 @@ TEXTO MUY LARGO
 
 next features
 agregar botón para volver al inicio
+separar 3 tipos de entradas; titulo, frase, parrafo.
